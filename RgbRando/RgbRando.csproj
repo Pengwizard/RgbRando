@@ -8,7 +8,7 @@
     <Product>RgbRando</Product>
     <Description>A Randomizer connection that allows randomization of RGB values for the shader.</Description>
     <Copyright>Copyright © Nopre, TheMathGeek_314 2026</Copyright>
-    <Authors>Nopre</Authors>
+    <Authors>Nopre, TheMathGeek_314</Authors>
     <NoWarn>7035</NoWarn>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <Deterministic>false</Deterministic>
