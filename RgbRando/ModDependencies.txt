@@ -1,0 +1,6 @@
+Randomizer 4
+RandomizerCore
+MenuChanger
+ItemChanger
+RandoSettingsManager
+RandomizerCore.Json
