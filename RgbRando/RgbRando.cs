@@ -76,7 +76,14 @@ namespace RgbRando
 
         public void LoadAssets()
         {
-            var assetBundle = AssetBundle.LoadFromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("RgbRando.grayscaler.unity3d"));
+            var platform = Application.platform switch
+            {
+                RuntimePlatform.WindowsPlayer => "windows",
+                RuntimePlatform.OSXPlayer => "osx",
+                _ => throw new PlatformNotSupportedException("What platform are you even on??")
+            };
+
+            var assetBundle = AssetBundle.LoadFromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream($"RgbRando.grayscaler_{platform}.unity3d"));
             GrayscaleShader = assetBundle.LoadAsset<Shader>("assets/shaders/grayscaler.shader");
         }
 

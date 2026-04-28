@@ -44,11 +44,14 @@
     <None Remove="build.yml" />
     <None Remove="dependabot.yml" />
     <None Remove="grayscaler.unity3d" />
+    <None Remove="grayscaler_osx.unity3d" />
+    <None Remove="grayscaler_windows.unity3d" />
     <None Remove="README.md" />
     <None Remove="Resources\colorWheelExtra.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="grayscaler.unity3d" />
+    <EmbeddedResource Include="grayscaler_osx.unity3d" />
+    <EmbeddedResource Include="grayscaler_windows.unity3d" />
     <EmbeddedResource Include="Resources\colorWheelExtra.png" />
   </ItemGroup>
   <ItemGroup>
