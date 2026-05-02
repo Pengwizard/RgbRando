@@ -9,3 +9,4 @@ That means that, by default, you start with RBG being (0,0,0), and for example i
 ## Known "Issues" (that we can't really solve)
 * Stating the obvious - this has accessibility issues for color blind people...
 * When *two* values are maxed, but the third one is non-existant (e.g you have all of red and green but non of blue) certain bright scenes (like the radiance) might be an eye sore.
+aa
