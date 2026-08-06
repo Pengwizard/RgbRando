@@ -43,7 +43,8 @@ namespace RgbRando.Rando
             ItemChangerMod.Modules.GetOrAdd<RgbModule>();
         }
 
-        private static void LogRandoSettings(LogArguments args, TextWriter w) {
+        private static void LogRandoSettings(LogArguments args, TextWriter w)
+        {
             w.WriteLine("Logging RgbRando settings:");
             w.WriteLine(JsonUtil.Serialize(RgbRandoMod.GS));
         }
