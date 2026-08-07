@@ -1,6 +1,9 @@
-﻿using ItemChanger;
+﻿using System.IO;
+using ItemChanger;
 using ItemChanger.Tags;
 using Modding;
+using RandomizerMod.Logging;
+using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
 using RgbRando.IC;
 
@@ -15,12 +18,18 @@ namespace RgbRando.Rando
             LogicAdder.Hook();
 
             RandoController.OnExportCompleted += AddRgbModule;
+            SettingsLog.AfterLogSettings += LogRandoSettings;
 
             DefineItems();
 
             if (ModHooks.GetMod("RandoSettingsManager") is Mod)
             {
                 RSMInterop.Hook();
+            }
+
+            if(ModHooks.GetMod("ConnectionSettingsRando") is Mod)
+            {
+                CSRInterop.Hook();
             }
         }
 
@@ -32,6 +41,12 @@ namespace RgbRando.Rando
             }
 
             ItemChangerMod.Modules.GetOrAdd<RgbModule>();
+        }
+
+        private static void LogRandoSettings(LogArguments args, TextWriter w)
+        {
+            w.WriteLine("Logging RgbRando settings:");
+            w.WriteLine(JsonUtil.Serialize(RgbRandoMod.GS));
         }
 
         public static void DefineItems()
